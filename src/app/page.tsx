@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
+import HeroShot from "@/components/HeroShot";
 import WhatIsModulo from "@/components/WhatIsModulo";
 import PinnedNarrative from "@/components/PinnedNarrative";
 import Features from "@/components/Features";
@@ -13,6 +14,7 @@ export default function Home() {
     <main>
       <NavBar />
       <Hero />
+      <HeroShot />
       <WhatIsModulo />
       <PinnedNarrative />
       <div id="features">

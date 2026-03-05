@@ -5,13 +5,14 @@
 
 export const site = {
   name: "MODULO",
+  acronym: "Musician-Owned DAW for User-Led Orchestration",
   tagline: "The Generative Audio Workstation",
   subtagline:
     "AI generation, music-theory reasoning, and production-grade DAW engineering — in one continuous creative surface.",
   description:
-    "MODULO is a macOS-first standalone DAW built from scratch in C++/JUCE/Tracktion Engine where AI generation, harmonic reasoning, and professional mixing coexist in a single timeline.",
+    "MODULO (Musician-Owned DAW for User-Led Orchestration) is a macOS-first standalone Generative Audio Workstation built from scratch in C++/JUCE/Tracktion Engine. AI generation, harmonic reasoning, and professional mixing — one timeline.",
   githubUrl: "https://github.com/takakhoo/MODULO_DAW_AI",
-  // ↓ Points to GitHub releases — always shows the latest available beta DMG.
+  // Points to GitHub releases — always shows the latest available beta DMG.
   downloadUrl: "https://github.com/takakhoo/MODULO_DAW_AI/releases",
   email: "takakhoo@gmail.com",
   phone: "+1 (310) 739-1223",
@@ -24,7 +25,7 @@ export const heroWords = ["Generate.", "Arrange.", "Master."];
 
 export const whatIs = {
   headline: "Not AI bolted onto a DAW.\nAI built into the DAW.",
-  body: "Every DAW since 1989 was designed for recording engineers, then retrofitted for AI. MODULO started from the other direction: built by a lifelong musician who also happens to be a computer engineer — someone who knows that musicians think in chord inversions, scale degrees, and harmonic flow, not patch cables and MIDI CC lanes. The result is a system where AI actions, theory reasoning, and production engineering are first-class primitives in the same timeline.",
+  body: "MODULO — Musician-Owned DAW for User-Led Orchestration — was built by a lifelong musician who is also a computer engineer. A musician thinks in chord inversions, scale degrees, and harmonic flow. Every DAW built since 1989 was designed for recording engineers and then retrofitted for AI. MODULO started from the musician's mental model and built outward: generative AI, theory reasoning, and production-grade engineering as first-class primitives in the same timeline.",
   stats: [
     { value: "C++ / JUCE", label: "Core Engine" },
     { value: "Tracktion Engine", label: "Audio Backend" },
@@ -32,6 +33,49 @@ export const whatIs = {
     { value: "macOS Universal", label: "Platform" },
   ],
 };
+
+export const founder = {
+  name: "Taka Khoo",
+  title: "Builder — MODULO",
+  bio: [
+    "MODULO is a solo project. Every system — audio engine, AI integration, signal flow, music theory layer, UI — designed and built by one person.",
+    "Double Bachelors with Honors from Dartmouth College in Computer Engineering and Music. Now a Masters student in Computer Engineering at Dartmouth, working out of a small campus lab, applying everything accumulated across two disciplines.",
+    "The technical foundation draws on conference-level deep learning and signal processing research, audio codec and restoration system work, and hands-on production engineering inside Grammy-winning studio environments.",
+    "The musical foundation is lifelong: multi-instrument practice, advanced harmony and composition, and years of DAW production and mastering work — the kind that reveals exactly where existing tools fail musicians.",
+    "The question MODULO answers: what would music software look like if it were designed from day one for generative AI and for musicians — not retrofitted after the fact by engineers who don't play?",
+  ],
+};
+
+export const competitive = [
+  {
+    name: "Suno / Udio / Stable Audio",
+    category: "Web AI Music Tools",
+    strength: "Fast generation from text prompts.",
+    gap: "Output is a non-editable audio artifact. No arrangement control, no harmonic intent, no mix pipeline. Generation is completely detached from production — you get a clip, not a record.",
+    modulo: "MODULO generates into an editable timeline. The output is tracks, not a rendered file. Every generated clip is immediately routable, arrangeable, and mixable inside the same session.",
+  },
+  {
+    name: "RipX DAW (Hit'n'Mix)",
+    category: "AI Deconstruction DAW",
+    strength: "Strong in deconstruction workflows: import audio → separate stems → note-level audio edits in Rip representation.",
+    gap: "Optimized for taking things apart, not building them. Limited harmonic intelligence, no generative construction pipeline, no AI-native composition or chord reasoning.",
+    modulo: "MODULO is a construction workflow: plan → generate → arrange → mix. Harmony intelligence and production routing are first-class, not bolt-ons.",
+  },
+  {
+    name: "WavTool",
+    category: "Browser AI DAW",
+    strength: "Compelling browser-native AI-assisted workflow with good UX.",
+    gap: "Web-only architecture limits local performance, routing depth, long-session semantics, and native plugin hosting. Can't run a production session.",
+    modulo: "MODULO is a native standalone macOS application — full plugin hosting, real-time routing, and no browser constraints. Built for finishing records, not sketching ideas.",
+  },
+  {
+    name: "Logic / Ableton / Pro Tools",
+    category: "Traditional DAWs",
+    strength: "Deep production tooling, massive plugin ecosystems, industry-standard workflows.",
+    gap: "AI is mostly bolt-on and assistive — features added after the architecture was set. AI lives outside the timeline context and requires constant context-switching.",
+    modulo: "MODULO treats AI actions as timeline primitives. Generation, transcription, harmonization, and stem decomposition are not plugins or menus — they are first-class actions wired into the session state.",
+  },
+];
 
 export const narrative = [
   {
@@ -175,6 +219,12 @@ export const hotkeys = [
 
 export const screenshots = [
   {
+    src: "/assets/images/modulo-main-shot.png",
+    alt: "MODULO Full DAW Session — Timeline, AI Controls, Mixer",
+    caption: "Full Live Session — Timeline, Mixer, Native EQ, AI Controls",
+    wide: true,
+  },
+  {
     src: "/assets/images/fullscreen.png",
     alt: "MODULO Full DAW View",
     caption: "Full Session — Timeline, Tracks, and Transport",
@@ -265,15 +315,15 @@ export const roadmap = [
 
 export const whyItMatters = [
   {
-    headline: "Built by a musician.",
-    body: "MODULO was built by a lifelong multi-instrumentalist who also holds a computer engineering background. The design question was always: what does a musician actually need — not what does an audio engineer need. That means chord inversions, scale-degree context, octave hotkeys, and harmonic feedback are first-class features, not afterthoughts.",
+    headline: "A musician who built the tool they needed.",
+    body: "Lifelong multi-instrumentalist. Double Bachelors with Honors from Dartmouth in Computer Engineering and Music. Now a Masters student in Computer Engineering at Dartmouth — working out of a small campus lab, applying everything learned across deep learning, signal processing, composition, and years inside Grammy-winning studio environments.",
   },
   {
-    headline: "Grammy-winning studio experience.",
-    body: "The engineering behind MODULO draws on hands-on experience in Grammy-winning studio environments, conference-level ML/DSP research, and audio codec and restoration system work. It is an end-to-end production tool designed by someone who has shipped recordings, not just demos.",
+    headline: "Built from a musician's mental model.",
+    body: "Most DAW engineers don't play. MODULO was designed by someone who does — which is why chord inversions, scale-degree visual feedback, octave-transpose hotkeys, and harmonic reasoning are core features, not plugins. The tool matches how musicians actually think.",
   },
   {
-    headline: "Defining a new category.",
-    body: "MODULO is a concrete, working implementation of the Generative Audio Workstation — where AI generation, music theory reasoning, and professional production tooling converge in a single timeline. A fully functional DAW with plugin hosting, real mixing, and five AI workflow systems working end-to-end.",
+    headline: "A concrete blueprint for a new category.",
+    body: "MODULO is a fully functional Generative Audio Workstation — plugin hosting, real-time mixing, multi-track editing, and five AI workflow systems working end-to-end at Beta 1.0. Not a demo. Not a research prototype. A working first-of-kind standalone desktop GAW.",
   },
 ];
