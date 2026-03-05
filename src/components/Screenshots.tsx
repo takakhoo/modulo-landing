@@ -68,18 +68,20 @@ export default function Screenshots() {
           Every screenshot is from a live Beta 1.0 session — real features, real UI.
         </p>
 
-        {/* Wide shots — full-width featured */}
+        {/* Wide shots — each rendered at its own natural aspect ratio */}
         <div className="space-y-6 mb-6">
           {wideShots.map((shot, i) => {
             const globalIdx = screenshots.indexOf(shot);
+            const hasNaturalSize = shot.w && shot.h;
             return (
               <div
                 key={i}
                 className="reveal group relative w-full rounded-2xl overflow-hidden cursor-zoom-in"
                 style={{
                   border: "1px solid rgba(201,168,76,0.12)",
-                  aspectRatio: "21/9",
                   background: "#050505",
+                  // Use natural ratio if provided, else fall back to 21/9
+                  aspectRatio: hasNaturalSize ? `${shot.w}/${shot.h}` : "21/9",
                 }}
                 onClick={() => setLightbox(globalIdx)}
                 onMouseEnter={(e) => {
@@ -95,7 +97,7 @@ export default function Screenshots() {
                   src={shot.src}
                   alt={shot.alt}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                  className="object-contain transition-transform duration-700 group-hover:scale-[1.015]"
                   sizes="(max-width: 768px) 100vw, 90vw"
                 />
                 {/* Caption overlay */}

@@ -22,22 +22,22 @@ export default function HeroShot() {
           <span className="tag-pill">Beta 1.0 — Live Session</span>
         </div>
 
-        {/* Main shot container */}
+        {/* Main shot container — natural 3439×1439 ratio */}
         <div
           className="relative w-full rounded-2xl overflow-hidden group"
           style={{
             border: "1px solid rgba(201,168,76,0.22)",
             boxShadow:
               "0 0 0 1px rgba(201,168,76,0.06), 0 32px 80px rgba(0,0,0,0.6), 0 0 120px rgba(201,168,76,0.06)",
-            aspectRatio: "16/9",
             background: "#050505",
           }}
         >
           <Image
             src="/assets/images/modulo-main-shot.png"
             alt="MODULO DAW — Full Session View with Timeline and Mixer"
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-[1.012]"
+            width={3439}
+            height={1439}
+            className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.012]"
             sizes="(max-width: 768px) 100vw, 90vw"
             priority
           />
