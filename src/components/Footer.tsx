@@ -46,12 +46,12 @@ export default function Footer() {
             className="mx-auto mb-10 font-light"
             style={{
               color: "var(--fg-muted)",
-              maxWidth: "480px",
+              maxWidth: "520px",
               fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
               lineHeight: 1.7,
             }}
           >
-            Whether you&apos;re a startup exploring AI music tools, a recruiter looking for full-stack audio engineering talent, or a researcher interested in the GAW category — let&apos;s talk.
+            Whether you&apos;re a startup exploring AI music tools, a recruiter looking for full-stack audio engineering talent, or a researcher interested in the GAW category — let&apos;s talk. Reach out by email or phone.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -89,6 +89,27 @@ export default function Footer() {
               }}
             >
               {site.email}
+            </a>
+
+            {/* Phone */}
+            <a
+              href={`tel:${site.phone}`}
+              className="btn-shine inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-300"
+              style={{
+                border: "1px solid rgba(201,168,76,0.35)",
+                color: "var(--gold)",
+                letterSpacing: "0.04em",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,168,76,0.7)";
+                (e.currentTarget as HTMLElement).style.background = "rgba(201,168,76,0.06)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,168,76,0.35)";
+                (e.currentTarget as HTMLElement).style.background = "transparent";
+              }}
+            >
+              {site.phone}
             </a>
 
             {/* GitHub */}
@@ -177,7 +198,16 @@ export default function Footer() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--gold)")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--fg-muted)")}
             >
-              Contact
+              Email
+            </a>
+            <a
+              href={`tel:${site.phone}`}
+              className="transition-colors duration-200"
+              style={{ color: "var(--fg-muted)" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--gold)")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--fg-muted)")}
+            >
+              Phone
             </a>
           </div>
 

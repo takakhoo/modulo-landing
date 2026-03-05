@@ -11,9 +11,10 @@ export const site = {
   description:
     "MODULO is a macOS-first standalone DAW built from scratch in C++/JUCE/Tracktion Engine where AI generation, harmonic reasoning, and professional mixing coexist in a single timeline.",
   githubUrl: "https://github.com/takakhoo/MODULO_DAW_AI",
-  downloadUrl:
-    "https://github.com/takakhoo/MODULO_DAW_AI/raw/main/beta/MODULO_BETA_1.0/Modulo-3.2.0-universal.dmg",
-  email: "taka@modulo.audio",
+  // ↓ Points to GitHub releases — always shows the latest available beta DMG.
+  downloadUrl: "https://github.com/takakhoo/MODULO_DAW_AI/releases",
+  email: "takakhoo@gmail.com",
+  phone: "+1 (310) 739-1223",
   demoUrl: "#contact",
   version: "Beta 1.0",
   platform: "macOS (Apple Silicon + Intel Universal)",
@@ -23,7 +24,7 @@ export const heroWords = ["Generate.", "Arrange.", "Master."];
 
 export const whatIs = {
   headline: "Not AI bolted onto a DAW.\nAI built into the DAW.",
-  body: "Every DAW since 1989 was designed for recordings, then retrofitted for AI. MODULO was designed the other way around: generative AI as a first-class workflow primitive, wired directly into the timeline, mixer, and harmonic reasoning layer.",
+  body: "Every DAW since 1989 was designed for recording engineers, then retrofitted for AI. MODULO started from the other direction: built by a lifelong musician who also happens to be a computer engineer — someone who knows that musicians think in chord inversions, scale degrees, and harmonic flow, not patch cables and MIDI CC lanes. The result is a system where AI actions, theory reasoning, and production engineering are first-class primitives in the same timeline.",
   stats: [
     { value: "C++ / JUCE", label: "Core Engine" },
     { value: "Tracktion Engine", label: "Audio Backend" },
@@ -45,7 +46,7 @@ export const narrative = [
     id: "chords",
     eyebrow: "Reinforcement-Learning Harmony",
     headline: "Ranked chords, not random suggestions.",
-    body: "ReaLChords-powered harmonic exploration treats chord generation as a ranked search problem evaluated against melodic compatibility, stylistic coherence, and musical plausibility. Every option is editable after generation.",
+    body: "ReaLChords-powered harmonic exploration treats chord generation as a ranked search problem — evaluated against melodic compatibility, stylistic coherence, and musical plausibility. Chord cells highlight in red when a voicing falls outside the active key, giving instant visual theory feedback. Every option stays editable after generation.",
     image: "/assets/images/gen-chords.png",
     tag: "ReaLChords RL Model",
   },
@@ -69,9 +70,9 @@ export const narrative = [
     id: "mixer",
     eyebrow: "Production-Grade Signal Flow",
     headline: "A real mixer. Not a demo.",
-    body: "Track/bus/master architecture, send and return routing, automation-ready lane behavior, and metering built for gain staging. Every AI output flows directly into the mix.",
+    body: "Track/bus/master architecture with send and return routing, automation-ready lane behavior, real-time metering for gain staging, and native built-in EQ and FX modules — all designed so every AI output flows directly into the mix without leaving the session.",
     image: "/assets/images/mixer.png",
-    tag: "DAW-Grade Routing",
+    tag: "Bus / Send / Native EQ",
   },
 ];
 
@@ -83,28 +84,28 @@ export const features = [
   },
   {
     icon: "Piano",
-    title: "Chord Workshop",
-    desc: "Theory-aware chord editing with chord name / scale-degree context, note-level piano roll edits, and immediate auditory feedback.",
+    title: "Chord Workshop + Inversions",
+    desc: "Theory-aware editing with chord names, scale-degree context, and full inversion support. Chord cells turn red when a voicing leaves the active key — instant visual harmonic feedback. Edit notes in the piano roll or drag inversions live.",
   },
   {
     icon: "Waveform",
     title: "Audio to MIDI",
-    desc: "Deep-learning pitch transcription via Basic Pitch converts any audio source to editable MIDI with chord inference — inside the timeline.",
+    desc: "Deep-learning pitch transcription via Basic Pitch converts any audio source to editable MIDI with chord inference — inside the timeline. No external tools, no roundtripping.",
   },
   {
     icon: "Harmony",
     title: "Melody-Aware Harmonization",
-    desc: "Generate up to 5 harmony lines from a source melody with key-aware style modes and temporal alignment to the source phrasing.",
+    desc: "Generate up to 5 harmony lines from a source melody with key-aware style modes and temporal alignment to the source phrasing. Outputs drop into arrangement lanes immediately.",
   },
   {
-    icon: "Stems",
-    title: "Stem Extraction",
-    desc: "Decompose any audio source into production lanes — vocals, drums, bass, melodics — imported directly into the track architecture.",
+    icon: "Mixer",
+    title: "Pro Mixer — Sends, Buses, Native EQ",
+    desc: "Full track/bus/master architecture with send and return routing, real-time metering, automation lanes, and custom-built native EQ and FX modules. Every AI output routes directly into the professional mix graph.",
   },
   {
-    icon: "Plugin",
-    title: "External Plugin Hosting",
-    desc: "Host VST/AU instruments and effects inside MODULO's AI-native workflow. Blend professional chains with generative systems.",
+    icon: "Hotkeys",
+    title: "Musician-Optimized Hotkeys",
+    desc: "Hotkeys designed for how musicians think. U / D transpose the selected track up or down by a full octave. C opens Chord Workshop. P opens the piano roll. Q quantizes. Every workflow is one key away from the transport.",
   },
 ];
 
@@ -136,10 +137,10 @@ export const techStack = [
     color: "green" as const,
     items: [
       "Chord inference from MIDI + audio",
-      "Theory-aware harmony generation",
+      "Theory-aware harmony generation (inversions, voicings)",
       "Section-aware arrangement planner",
       "Key-aware style mode system",
-      "Temporal alignment engine",
+      "Visual harmonic feedback (red = out of key)",
     ],
   },
   {
@@ -149,10 +150,27 @@ export const techStack = [
       "Track / bus / master routing graph",
       "Send and return architecture",
       "Automation-ready lane system",
-      "Native EQ and FX modules",
+      "Native EQ and FX modules (custom-built)",
       "Real-time metering + gain staging",
     ],
   },
+];
+
+export const hotkeys = [
+  { key: "U / D", action: "Transpose selected track up / down by octave" },
+  { key: "C", action: "Open Chord Workshop" },
+  { key: "P", action: "Open piano roll for selected clip" },
+  { key: "Q", action: "Quantize selected notes" },
+  { key: "Space", action: "Play / pause transport" },
+  { key: "R", action: "Toggle record" },
+  { key: "I", action: "Add idea marker at playhead" },
+  { key: "L", action: "Duplicate selected MIDI clip forward" },
+  { key: "S", action: "Toggle solo on selected track" },
+  { key: "M", action: "Context-aware mute behavior" },
+  { key: "Delete", action: "Context delete (marker / chord / note / clip)" },
+  { key: "Cmd+Z", action: "Undo" },
+  { key: "Cmd+D", action: "Duplicate selected track" },
+  { key: "Cmd+A", action: "Select all notes (piano roll)" },
 ];
 
 export const screenshots = [
@@ -171,7 +189,7 @@ export const screenshots = [
   {
     src: "/assets/images/chord-workshop.png",
     alt: "Chord Workshop with Annotated Piano Roll",
-    caption: "Chord Workshop — Theory + Piano Roll in One Loop",
+    caption: "Chord Workshop — Theory + Inversions + Piano Roll in One Loop",
     wide: false,
   },
   {
@@ -214,10 +232,11 @@ export const roadmap = [
       "Full-song AI generation via Composition Plan",
       "Audio to MIDI with Basic Pitch + chord inference",
       "ReaLChords harmonic exploration (RL-ranked candidates)",
+      "Chord Workshop with inversions + visual key feedback (red = out of key)",
       "Stem extraction, SFX generation, audio isolation",
-      "Production mixer with bus/send routing",
-      "Plugin hosting (VST/AU), native EQ + FX",
-      "Local AI Worker v1 (versioned HTTP job protocol)",
+      "Production mixer with bus/send routing + native EQ",
+      "Plugin hosting (VST/AU)",
+      "Musician hotkeys: U/D octave, C chord workshop, P piano roll, Q quantize",
     ],
   },
   {
@@ -246,15 +265,15 @@ export const roadmap = [
 
 export const whyItMatters = [
   {
-    headline: "Solo-built. Production-ready.",
-    body: "Every system — audio engine, AI integration, signal flow, UI — engineered by one person with a background in ML/DSP research, audio codec systems, and Grammy-winning studio practice.",
+    headline: "Built by a musician.",
+    body: "MODULO was built by a lifelong multi-instrumentalist who also holds a computer engineering background. The design question was always: what does a musician actually need — not what does an audio engineer need. That means chord inversions, scale-degree context, octave hotkeys, and harmonic feedback are first-class features, not afterthoughts.",
   },
   {
-    headline: "A blueprint, not a demo.",
-    body: "MODULO is a fully functional DAW with plugin hosting, real-time mixing, multi-track editing, and five AI workflow systems all working end-to-end at Beta 1.0.",
+    headline: "Grammy-winning studio experience.",
+    body: "The engineering behind MODULO draws on hands-on experience in Grammy-winning studio environments, conference-level ML/DSP research, and audio codec and restoration system work. It is an end-to-end production tool designed by someone who has shipped recordings, not just demos.",
   },
   {
     headline: "Defining a new category.",
-    body: "MODULO is a concrete, working implementation of the Generative Audio Workstation — where generative AI, music theory, and professional production tooling converge in one system.",
+    body: "MODULO is a concrete, working implementation of the Generative Audio Workstation — where AI generation, music theory reasoning, and professional production tooling converge in a single timeline. A fully functional DAW with plugin hosting, real mixing, and five AI workflow systems working end-to-end.",
   },
 ];

@@ -33,6 +33,20 @@ const iconMap: Record<string, React.ReactNode> = {
       <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 15 12 12m0 0 3.75 3M12 12V3m-5.25 9.75h10.5" />
     </svg>
   ),
+  Mixer: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5h18M3 12h18M3 16.5h18" />
+      <circle cx="7" cy="7.5" r="2" fill="currentColor" stroke="none" />
+      <circle cx="14" cy="12" r="2" fill="currentColor" stroke="none" />
+      <circle cx="9" cy="16.5" r="2" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  Hotkeys: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+      <rect x="3" y="4" width="18" height="14" rx="2" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 9h8M8 12h4m4 0h.01M12 15h.01" />
+    </svg>
+  ),
   Plugin: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
       <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.959.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z" />
@@ -64,7 +78,7 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="reveal text-center mb-6">
-          <span className="tag-pill">AI Systems</span>
+          <span className="tag-pill">Built for Musicians</span>
         </div>
         <h2
           className="reveal text-center font-bold mb-6"
@@ -74,7 +88,7 @@ export default function Features() {
             color: "var(--fg)",
           }}
         >
-          Five AI systems. One timeline.
+          AI power. Musician logic.
         </h2>
         <p
           className="reveal text-center mx-auto mb-20 font-light"
@@ -84,7 +98,7 @@ export default function Features() {
             fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)",
           }}
         >
-          Every AI capability in MODULO is wired directly into the project state — not siloed in a popup or an external tool.
+          Every capability is wired directly into project state — designed by a lifelong musician who knows what musicians actually need in a DAW.
         </p>
 
         {/* Feature grid */}
