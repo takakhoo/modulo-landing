@@ -3,6 +3,7 @@ import "./globals.css";
 import { site } from "../../content/siteData";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://modulo-landing-omega.vercel.app"),
   title: `${site.name} — ${site.tagline}`,
   description: site.description,
   keywords: [
