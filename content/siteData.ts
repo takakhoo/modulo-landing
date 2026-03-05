@@ -10,10 +10,13 @@ export const site = {
   subtagline:
     "AI generation, music-theory reasoning, and production-grade DAW engineering — in one continuous creative surface.",
   description:
-    "MODULO (Musician-Owned DAW for User-Led Orchestration) is a macOS-first standalone Generative Audio Workstation built from scratch in C++/JUCE/Tracktion Engine. AI generation, harmonic reasoning, and professional mixing — one timeline.",
+    "MODULO (Musician-Owned DAW for User-Led Orchestration) is a macOS-first standalone Generative Audio Workstation built from scratch in C++/JUCE/Tracktion Engine. AI generation, harmonic reasoning, and professional mixing — one timeline. Beta 1.0 available now.",
   githubUrl: "https://github.com/takakhoo/MODULO_DAW_AI",
-  // Points to GitHub releases — always shows the latest available beta DMG.
-  downloadUrl: "https://github.com/takakhoo/MODULO_DAW_AI/releases",
+  // Direct DMG download — updated with each beta push.
+  downloadUrl:
+    "https://github.com/takakhoo/MODULO_DAW_AI/raw/main/beta/MODULO_BETA_1.0/Modulo-3.2.0-universal.dmg",
+  checksumUrl:
+    "https://github.com/takakhoo/MODULO_DAW_AI/raw/main/beta/MODULO_BETA_1.0/SHA256SUMS.txt",
   email: "takakhoo@gmail.com",
   phone: "+1 (310) 739-1223",
   demoUrl: "#contact",
@@ -22,6 +25,12 @@ export const site = {
 };
 
 export const heroWords = ["Generate.", "Arrange.", "Master."];
+
+export const betaNotice = {
+  label: "Active Development",
+  headline: "This is real software in active development — not a polished product.",
+  body: "MODULO Beta 1.0 is functional end-to-end: you can open sessions, generate audio, edit chords, run Audio-to-MIDI, and mix in the timeline. But it is still early. Some workflows are rough, some features are still being hardened, and Apple notarization is not yet obtained — so macOS will ask you to bypass Gatekeeper to run it. If you're the kind of person who finds that exciting rather than alarming, this is for you.",
+};
 
 export const whatIs = {
   headline: "Not AI bolted onto a DAW.\nAI built into the DAW.",
@@ -65,15 +74,15 @@ export const competitive = [
     name: "WavTool",
     category: "Browser AI DAW",
     strength: "Compelling browser-native AI-assisted workflow with good UX.",
-    gap: "Web-only architecture limits local performance, routing depth, long-session semantics, and native plugin hosting. Can't run a production session.",
-    modulo: "MODULO is a native standalone macOS application — full plugin hosting, real-time routing, and no browser constraints. Built for finishing records, not sketching ideas.",
+    gap: "Web-only architecture limits local performance, routing depth, long-session semantics, and native plugin hosting.",
+    modulo: "MODULO is a native standalone macOS application — full plugin hosting, real-time routing, no browser constraints.",
   },
   {
     name: "Logic / Ableton / Pro Tools",
     category: "Traditional DAWs",
     strength: "Deep production tooling, massive plugin ecosystems, industry-standard workflows.",
-    gap: "AI is mostly bolt-on and assistive — features added after the architecture was set. AI lives outside the timeline context and requires constant context-switching.",
-    modulo: "MODULO treats AI actions as timeline primitives. Generation, transcription, harmonization, and stem decomposition are not plugins or menus — they are first-class actions wired into the session state.",
+    gap: "AI is mostly bolt-on and assistive. AI lives outside the timeline context and requires constant context-switching.",
+    modulo: "MODULO treats AI actions as timeline primitives. Generation, transcription, harmonization, and stem decomposition are wired directly into the session state.",
   },
 ];
 
@@ -113,7 +122,7 @@ export const narrative = [
   {
     id: "mixer",
     eyebrow: "Production-Grade Signal Flow",
-    headline: "A real mixer. Not a demo.",
+    headline: "A real mixer. Not a mockup.",
     body: "Track/bus/master architecture with send and return routing, automation-ready lane behavior, real-time metering for gain staging, and native built-in EQ and FX modules — all designed so every AI output flows directly into the mix without leaving the session.",
     image: "/assets/images/mixer.png",
     tag: "Bus / Send / Native EQ",
@@ -149,7 +158,7 @@ export const features = [
   {
     icon: "Hotkeys",
     title: "Musician-Optimized Hotkeys",
-    desc: "Hotkeys designed for how musicians think. U / D transpose the selected track up or down by a full octave. C opens Chord Workshop. P opens the piano roll. Q quantizes. Every workflow is one key away from the transport.",
+    desc: "U / D transpose the selected track up or down by a full octave. C opens Chord Workshop. P opens the piano roll. Q quantizes. Every workflow is one key away from the transport.",
   },
 ];
 
@@ -217,6 +226,49 @@ export const hotkeys = [
   { key: "Cmd+A", action: "Select all notes (piano roll)" },
 ];
 
+export const gettingStarted = {
+  headline: "How to get set up",
+  subhead: "MODULO needs three things to run fully: the app itself, an ElevenLabs API key for AI music generation, and Splice for plugin sounds. Here's exactly how to get each one.",
+  steps: [
+    {
+      number: "01",
+      title: "Download & open MODULO",
+      color: "#C9A84C",
+      items: [
+        "Click Download Beta above — the DMG downloads directly from GitHub.",
+        "Open the DMG and drag MODULO into your Applications folder.",
+        "On first launch, macOS will block it because Apple notarization is not yet obtained for this beta.",
+        "To bypass: go to System Settings → Privacy & Security → scroll down to the MODULO blocked message → click Open Anyway.",
+        "You only need to do this once. After that, MODULO opens normally.",
+      ],
+    },
+    {
+      number: "02",
+      title: "Get an ElevenLabs API key",
+      color: "#60A5FA",
+      items: [
+        "Go to elevenlabs.io and create a free account.",
+        "In your ElevenLabs dashboard, go to Profile → API Keys → Create API Key.",
+        "Copy the key — it starts with 'sk_...'.",
+        "In MODULO, open Preferences and paste the key into the ElevenLabs API Key field.",
+        "The free tier gives you enough credits to explore generation. Upgrade for heavier use.",
+      ],
+    },
+    {
+      number: "03",
+      title: "Install Splice (optional but recommended)",
+      color: "#4ADE80",
+      items: [
+        "Splice is a plugin and sample marketplace. MODULO can host any VST/AU plugin, and Splice is the easiest way to get instruments and effects.",
+        "Go to splice.com and create a free account.",
+        "Download and install the Splice desktop app.",
+        "Inside Splice, browse the plugin store — many plugins have free trials. Install any VST/AU and it will automatically appear in MODULO's plugin scanner.",
+        "Not required — MODULO works standalone and with any plugins you already have.",
+      ],
+    },
+  ],
+};
+
 export const screenshots = [
   {
     src: "/assets/images/modulo-main-shot.png",
@@ -247,36 +299,48 @@ export const screenshots = [
     alt: "Chord Workshop with Annotated Piano Roll",
     caption: "Chord Workshop — Theory + Inversions + Piano Roll in One Loop",
     wide: false,
+    w: 0,
+    h: 0,
   },
   {
     src: "/assets/images/harmonies.png",
     alt: "Harmony Generation",
     caption: "Generate Harmony — Up to 5 Lines from Source Melody",
     wide: false,
+    w: 0,
+    h: 0,
   },
   {
     src: "/assets/images/gen-music.png",
     alt: "Full AI Music Generation",
     caption: "Generate Music — Full Song to Editable Timeline",
     wide: false,
+    w: 0,
+    h: 0,
   },
   {
     src: "/assets/images/native-fx.png",
     alt: "Native EQ and FX",
     caption: "Native FX — Custom EQ Built Into the App",
     wide: false,
+    w: 0,
+    h: 0,
   },
   {
     src: "/assets/images/plugins.png",
     alt: "External Plugin Hosting",
     caption: "Plugin Hosting — VST/AU Inside the AI Workflow",
     wide: false,
+    w: 0,
+    h: 0,
   },
   {
     src: "/assets/images/gen-fx.png",
     alt: "Generate SFX",
     caption: "Generate SFX — Design Layers as Timeline Material",
     wide: false,
+    w: 0,
+    h: 0,
   },
 ];
 
@@ -285,7 +349,7 @@ export const roadmap = [
     phase: "Now — Beta 1.0",
     status: "shipped" as const,
     items: [
-      "Full-song AI generation via Composition Plan",
+      "Full-song AI generation via Composition Plan (requires ElevenLabs API key)",
       "Audio to MIDI with Basic Pitch + chord inference",
       "ReaLChords harmonic exploration (RL-ranked candidates)",
       "Chord Workshop with inversions + visual key feedback (red = out of key)",
@@ -299,6 +363,7 @@ export const roadmap = [
     phase: "Near-Term",
     status: "active" as const,
     items: [
+      "Apple notarization — removes the Open Anyway Gatekeeper step",
       "Notarized distribution + App Store submission",
       "Cloud session sync and project sharing",
       "Extended quantization and groove templates",
@@ -322,14 +387,14 @@ export const roadmap = [
 export const whyItMatters = [
   {
     headline: "A musician who built the tool they needed.",
-    body: "Lifelong multi-instrumentalist. Double Bachelors with Honors from Dartmouth in Computer Engineering and Music. Now a Masters student in Computer Engineering at Dartmouth — working out of a small campus lab, applying everything learned across deep learning, signal processing, composition, and years inside Grammy-winning studio environments.",
+    body: "Lifelong multi-instrumentalist. Double Bachelors with Honors from Dartmouth College in Computer Engineering and Music. Now a Masters student in Computer Engineering at Dartmouth — working out of a small campus lab, pulling from deep learning, signal processing, composition, production, and years inside Grammy-winning studio environments.",
   },
   {
     headline: "Built from a musician's mental model.",
     body: "Most DAW engineers don't play. MODULO was designed by someone who does — which is why chord inversions, scale-degree visual feedback, octave-transpose hotkeys, and harmonic reasoning are core features, not plugins. The tool matches how musicians actually think.",
   },
   {
-    headline: "A concrete blueprint for a new category.",
-    body: "MODULO is a fully functional Generative Audio Workstation — plugin hosting, real-time mixing, multi-track editing, and five AI workflow systems working end-to-end at Beta 1.0. Not a demo. Not a research prototype. A working first-of-kind standalone desktop GAW.",
+    headline: "An early working blueprint for a new category.",
+    body: "MODULO is a functional Generative Audio Workstation — plugin hosting, real-time mixing, multi-track editing, and five AI workflow systems working end-to-end at Beta 1.0. It is early, it is rough in places, and it is actively being developed. But it works, and it is real.",
   },
 ];

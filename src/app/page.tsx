@@ -7,6 +7,7 @@ import Features from "@/components/Features";
 import TechStack from "@/components/TechStack";
 import Screenshots from "@/components/Screenshots";
 import Roadmap from "@/components/Roadmap";
+import GetStarted from "@/components/GetStarted";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <div id="roadmap">
         <Roadmap />
       </div>
+      <GetStarted />
       <Footer />
     </main>
   );

@@ -19,6 +19,7 @@ export default function NavBar() {
     { label: "Architecture", href: "#tech" },
     { label: "Screenshots", href: "#screenshots" },
     { label: "Roadmap", href: "#roadmap" },
+    { label: "Get Started", href: "#get-started" },
   ];
 
   return (
